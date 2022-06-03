@@ -24,7 +24,7 @@ def predict():
 	pre = pre.reshape(1, -1)
 	res = model.predict(pre)
 	print(res)
-	return res[0]
+	return {result : {result:res[0]}}
 
 if __name__ == '__main__':
 	app.run(debug = True)
