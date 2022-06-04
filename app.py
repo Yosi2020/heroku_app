@@ -11,7 +11,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-model = joblib.load(open('decision_tree_model'))
+model = joblib.load('decision_tree_model')
 
 @app.route('/predict', methods = ['GET','POST'])
 
