@@ -25,7 +25,7 @@ def predict():
 	res = model.predict(pre)
 	print(res)
 	# send back to browser
-	output = {'results': int(result[0])}
+	output = {'results': str(res[0])}
 	
 	# return data
 	return jsonify(results=output)
