@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 model = joblib.load('decision_tree_model')
 
-@app.route('/predict', methods = ['GET','POST'])
+@app.route('/', methods = ['POST'])
 
 def predict():
 	event = json.loads(request.data)
