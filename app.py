@@ -5,7 +5,7 @@
 
 import joblib
 
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import json
 import numpy as np
 
@@ -24,7 +24,11 @@ def predict():
 	pre = pre.reshape(1, -1)
 	res = model.predict(pre)
 	print(res)
-	return str(res[0])
+	# send back to browser
+	output = {'results': int(result[0])}
+	
+	# return data
+	return jsonify(results=output)
 
 if __name__ == '__main__':
 	app.run(debug = True)
