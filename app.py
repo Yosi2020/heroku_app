@@ -16,7 +16,7 @@ model = joblib.load('decision_tree_model')
 @app.route('/', methods = ['POST'])
 
 def predict():
-	event = json.loads(request.data)
+	event = request.get_json()
 	print(event)
 	values = event['values']
 	values = list(map(np.float, values))
